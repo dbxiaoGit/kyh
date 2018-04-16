@@ -1,0 +1,13 @@
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    
+mybatis:
+	config-locations:
+		classpath:	mybatis/mybatis-config.xml
+	mapper-locations:
+		classpath:	mybatis/mapper/*.xml
+	type-aliases-package:	kyh.entity
+
+
+    
