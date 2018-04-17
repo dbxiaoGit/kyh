@@ -21,9 +21,7 @@ public class MasterDataSourcesConfig {
 
     static final String PACKAGES = "kyh.dao.master";
 
-    private static final String MAPPER_LOCAL = "classpath:mapper/master/*.xml";
-
-    @ConfigurationProperties("spring.datasource")
+    @ConfigurationProperties("spring.datasource.ds1")
     @Primary
     @Bean(name = "masterDataSource")
     public DruidDataSource druidDataSource() {
@@ -43,7 +41,6 @@ public class MasterDataSourcesConfig {
     public SqlSessionFactory masterSqlSessionFactory(@Qualifier("masterDataSource") DataSource dataSource) throws Exception {
         final SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
         sessionFactoryBean.setDataSource(dataSource);
-        sessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(MAPPER_LOCAL));
         return sessionFactoryBean.getObject();
     }
 

@@ -17,9 +17,7 @@ public class CustomDataSourcesConfig {
 
     static final String PACKAGES = "kyh.dao.custom";
 
-    private static final String MAPPER_LOCAL = "classpath:mapper/custom/*.xml";
-
-    @ConfigurationProperties("custom.datasource.ds1")
+    @ConfigurationProperties("spring.datasource.ds2")
     @Bean(name = "customDataSource")
     public DruidDataSource druidDataSource() {
         return new DruidDataSource();
@@ -36,7 +34,6 @@ public class CustomDataSourcesConfig {
     public SqlSessionFactory customSqlSessionFactory(@Qualifier("customDataSource") DruidDataSource dataSource) throws Exception {
         final SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
         sessionFactoryBean.setDataSource(dataSource);
-        sessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(MAPPER_LOCAL));
         return sessionFactoryBean.getObject();
     }
 

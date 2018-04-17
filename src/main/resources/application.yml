@@ -1,13 +1,16 @@
 spring:
   thymeleaf:
     prefix: classpath:/templates/
-    
-mybatis:
-	config-locations:
-		classpath:	mybatis/mybatis-config.xml
-	mapper-locations:
-		classpath:	mybatis/mapper/*.xml
-	type-aliases-package:	kyh.entity
-
-
-    
+   
+spring:
+  datasource:
+    ds1:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://1.1.1.1:3306/a?useUnicode=true&characterEncoding=utf-8
+      username: test
+      password: test
+    ds2:
+      driverClassName: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@1.1.1.1:1530/a
+      username: test
+      password: test

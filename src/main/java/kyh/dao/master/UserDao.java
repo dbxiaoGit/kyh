@@ -2,20 +2,22 @@ package kyh.dao.master;
 
 import java.util.List;
 
-import kyh.entity.User;
+import org.apache.ibatis.annotations.*;
 
-public class UserDao {
-	List<User> getNoAddress(){
-		return null;
-		}
+import kyh.entity.master.User;
+
+@Mapper
+public interface UserDao {
+
 	
-	User getOne(int id){
-		return null;
-		}
+    @Select("SELECT * FROM gringotts.t_user order by id desc limit 10")
+	List<User> get10();
+	
+	User getOne(int id);
 
-	//void insert(User user) {}
+	//void insert(User user) 
 
-	void update(User user) {}
+	void update(User user) ;
 
-	void delete(int id) {}
+	void delete(int id) ;
 }
