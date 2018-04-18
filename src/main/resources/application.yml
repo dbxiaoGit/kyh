@@ -14,3 +14,5 @@ spring:
       url: jdbc:oracle:thin:@1.1.1.1:1530/a
       username: test
       password: test
+creditCallbackUrl: http://1.1.1.1
+fcsUrl: http://1.1.1.2

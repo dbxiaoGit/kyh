@@ -3,7 +3,7 @@ package kyh.entity;
 import java.util.Date;
 
 public class User {
-	private int id;
+	private Long id;
 	private String membercode;
 	private String user_name;
 	private String mobile;
@@ -19,10 +19,11 @@ public class User {
 	private Date created_time;
 	private Date updated_time;
 	
-	public int getId() {
+
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getMembercode() {

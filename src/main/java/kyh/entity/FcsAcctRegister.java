@@ -1,4 +1,4 @@
-package kyh.entity.custom;
+package kyh.entity;
 
 public class FcsAcctRegister {
 	private Long id;

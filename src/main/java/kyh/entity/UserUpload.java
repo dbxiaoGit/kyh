@@ -3,31 +3,31 @@ package kyh.entity;
 import java.util.Date;
 
 public class UserUpload {
-	private int id;
-	private int user_id;
-	private int type;
+	private Long id;
+	private Long user_id;
+	private Long type;
 	private String file_path;
 	private String url;
 	private String ocr_result;
 	private Date created_time;
 	
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public int getUser_id() {
+	public Long getUser_id() {
 		return user_id;
 	}
-	public void setUser_id(int user_id) {
+	public void setUser_id(Long user_id) {
 		this.user_id = user_id;
 	}
-	public int getType() {
+	public Long getType() {
 		return type;
 	}
-	public void setType(int type) {
+	public void setType(Long type) {
 		this.type = type;
 	}
 	public String getFile_path() {

@@ -1,5 +1,6 @@
 package kyh.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -9,10 +10,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import kyh.dao.custom.FcsAcctRegisterDao;
+import kyh.dao.custom.WiseDao;
 import kyh.dao.master.UserDao;
-import kyh.entity.custom.FcsAcctRegister;
-import kyh.entity.master.User;
+import kyh.entity.FcsAcctRegister;
+import kyh.entity.User;
 
 @RestController
 public class GreetingController {
@@ -23,7 +24,7 @@ public class GreetingController {
     UserDao userDao ;
     
     @Autowired
-    FcsAcctRegisterDao fcsAcctRegisterDao;
+    WiseDao wiseDao;
     
     @Value("${spring.datasource.ds1.password}")
     private String testV1;
@@ -37,12 +38,12 @@ public class GreetingController {
     	logger.info(testV1);
     	logger.info(testV2);
 		return userDao.get10();
-        
     }
+    
     @RequestMapping(value="/oracle",produces="application/json;charset=UTF-8")
     public List<FcsAcctRegister> testOracle() {
     	logger.info("testOracle");
-		return fcsAcctRegisterDao.get10();
-        
+		return wiseDao.getRegister10();
     }
+
 }

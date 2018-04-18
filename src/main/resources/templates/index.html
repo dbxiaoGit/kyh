@@ -1,13 +1,50 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <meta charset="UTF-8"/>
-    <title>第一个HTML页面</title>
+<meta charset="UTF-8">
+<title>这里是title</title>
 </head>
 <body>
-<h1>Hello World</h1>
-<p th:text="${hello}"></p>
-<p th:text="|hello,${username},你好|"></p>
-<p th:text="'hello,' + ${username} + ',你好' "></p>
+	<h1>常用功能</h1>
+	<div>
+		<table>
+			<tr>
+				<td><a href="javascript:testConfirm();">testConfirm</a></td>
+			</tr>
+			<tr>
+				<td><a href="/mysql">testMysql</a></td>
+			</tr>
+			<tr>
+				<td><a href="/oracle">testOracle</a></td>
+			</tr>
+			<tr>
+				<td>指定membercode信用评级回调</td>
+				<td>
+					<form action="/shouXin" method="post">
+						<input type="text" name="memberCode" placeholder="请输入memberCode" /> 
+						<input type="submit" value="Submit" />
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="#" onclick="javascript:missMemberCodeShouXin();" >信用评级回调(全部)</a></td>
+			</tr>
+			<tr>
+				<td>放款中-->还款中</td>
+				<td>
+					<form action="/fangkuan" method="post">
+						<input type="text" name="memberCode" placeholder="请输入memberCode" /> 
+						<input type="submit" value="Submit" />
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="#" onclick="javascript:missMemberCodeFangKuang();" >全部放款中的交易更新为还款中</a></td>
+			</tr>
+		</table>
+	</div>
+	
+	<script type="text/javascript" src="/js/test1.js"></script>
+	
 </body>
 </html>

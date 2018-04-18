@@ -1,7 +1,7 @@
 #runconfigurations		${workspace_loc:/kyh}
 #settings.gradle	  rootProject.name = 'kyh'
 
-
+# 引用/resource/static/js中的js时src的路径不用加上/static,直接/js/xxx.js即可
 
 
 

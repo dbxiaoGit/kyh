@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.*;
 
-import kyh.entity.master.User;
+import kyh.entity.User;
 
 @Mapper
 public interface UserDao {
