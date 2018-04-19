@@ -33,7 +33,7 @@ public class CustomDataSourcesConfig {
     @Bean(name = "customSqlSessionFactory")
     public SqlSessionFactory customSqlSessionFactory(@Qualifier("customDataSource") DruidDataSource dataSource) throws Exception {
         final SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
-        sessionFactoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
+        //sessionFactoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
         sessionFactoryBean.setDataSource(dataSource);
         return sessionFactoryBean.getObject();
     }

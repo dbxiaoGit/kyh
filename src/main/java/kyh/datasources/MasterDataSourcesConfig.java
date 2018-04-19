@@ -40,7 +40,7 @@ public class MasterDataSourcesConfig {
     @Primary
     public SqlSessionFactory masterSqlSessionFactory(@Qualifier("masterDataSource") DataSource dataSource) throws Exception {
         final SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
-        sessionFactoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
+        //sessionFactoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
         sessionFactoryBean.setDataSource(dataSource);
         return sessionFactoryBean.getObject();
     }

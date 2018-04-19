@@ -1,5 +1,5 @@
 function testConfirm(){
-    if(confirm("确定将所有申请中的用户通过吗？")){
+    if(confirm("确认信息？")){
     	alert("true");
         return true;
     }else{
